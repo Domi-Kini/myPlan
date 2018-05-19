@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView_nameofplan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name des Trainingsplans*:"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/textEdit_nameofplan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textView_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wähle einen Tag für das Training:"
+        android:textSize="18sp"/>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/button_monday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Montag"/>
+        <RadioButton
+            android:id="@+id/button_tuesday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dienstag"/>
+        <RadioButton
+            android:id="@+id/button_wednesday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mittwoch"/>
+        <RadioButton
+            android:id="@+id/button_thursday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Donnerstag"/>
+        <RadioButton
+            android:id="@+id/button_friday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Freitag"/>
+        <RadioButton
+            android:id="@+id/button_saturday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Samstag"/>
+        <RadioButton
+            android:id="@+id/button_sunday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sonntag"/>
+    </RadioGroup>
+
+
+</LinearLayout>
