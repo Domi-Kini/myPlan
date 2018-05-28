@@ -3,41 +3,23 @@ package com.example.dominik.myplan;
 import java.util.*;
 
 public class Uebung {
-    private int id;
     private String name;
     private List<Integer> wiederholungen;
     private int saetze;
     private List<Integer> gewicht;
 
-    public Uebung(String name, int id) {
+    public Uebung(String name) {
         this.name = name;
-        this.id = id;
     }
 
-    public void setID(int id) {
-        this.id = id;
-    }
-    public int getID() {
-        return id;
-    }
-    public void changeName(String name) {
-        this.name = name;
-    }
     public String getName() {
         return name;
     }
 
-    public boolean setGewicht(int satz, int gw) {
+    public void setGewicht(int satz, int gw) {
         if (gewicht == null)
             gewicht = new ArrayList<Integer>();
-        if (gewicht.size() < satz) {
-            if (satz - gewicht.size() == 1)
-                gewicht.add(gw);
-            else return false; //HIER MUSS NOCH WAS GEMACHT WERDEN!!
-        } else {
-            gewicht.set(satz, gw);
-        }
-        return true;
+        gewicht.set(satz, gw);
     }
     public boolean setWH(int satz, int wh) {
         if (wiederholungen == null)

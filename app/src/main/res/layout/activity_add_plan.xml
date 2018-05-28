@@ -12,7 +12,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/textEdit_nameofplan"
+        android:id="@+id/editText_nameofplan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -62,10 +62,11 @@
             android:text="Sonntag"/>
     </RadioGroup>
     <Button
-        android:id="@+id/create_plan"
+        android:id="@+id/button_create_plan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Trainingsplan erstellen"
+        android:onClick="onClickCreatePlan"/>
 
 
 </LinearLayout>

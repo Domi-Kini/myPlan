@@ -14,12 +14,13 @@ public class Trainingsplan {
     public void changeName(String name) {
         this.name = name;
     }
+
     public void setUebung(Uebung e) {
         if (uebungen == null)
             uebungen = new ArrayList<Uebung>();
-        e.setID(uebungen.size());
         uebungen.add(e);
     }
+
     public void deleteUebunge(int id) {
         Uebung zw;
         for (int i = id + 1; i < uebungen.size(); i++) {
@@ -42,6 +43,7 @@ public class Trainingsplan {
             case 5: return "Freitag";
             case 6: return "Samstag";
             case 7: return "Sonntag";
+            default: return "something is going wrong in getTag()";
         }
     }
 }
