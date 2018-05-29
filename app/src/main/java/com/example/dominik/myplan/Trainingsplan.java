@@ -21,19 +21,14 @@ public class Trainingsplan {
         uebungen.add(e);
     }
 
-    public void deleteUebunge(int id) {
-        Uebung zw;
-        for (int i = id + 1; i < uebungen.size(); i++) {
-            zw = uebungen.get(i);
-            zw.setID(zw.getID() - 1);
-        }
-        uebungen.remove(id);
+    public void deleteUebunge(int ind) {
+        uebungen.remove(ind);
     }
+
     public void setTag(int tag) {
-        if (tag < 1 | tag > 7)
-            return; //HIER MUSS NOCH WAS GEMACHT WERDEN!!
         this.tag = tag;
     }
+
     public String getTag() {
         switch (tag) {
             case 1: return "Montag";
@@ -43,7 +38,7 @@ public class Trainingsplan {
             case 5: return "Freitag";
             case 6: return "Samstag";
             case 7: return "Sonntag";
-            default: return "something is going wrong in getTag()";
+            default: return "kein Tag ausgewaehlt";
         }
     }
 }
