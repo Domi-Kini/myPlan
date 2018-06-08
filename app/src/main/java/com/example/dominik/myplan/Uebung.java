@@ -10,8 +10,8 @@ public class Uebung {
 
     public Uebung(String name, int saetze, int[] gewicht, int[] wh) {
         this.name = name;
-        this.gewicht = new ArrayList<Integer>();
-        wiederholungen = new ArrayList<Integer>();
+        this.gewicht = new ArrayList<>();
+        wiederholungen = new ArrayList<>();
         for(int i = 0; i < saetze; i++) {
             this.gewicht.add(gewicht[i]);
             wiederholungen.add(wh[i]);
@@ -24,14 +24,14 @@ public class Uebung {
 
     public void setGewicht(int satz, int gw) {
         if (gewicht == null)
-            gewicht = new ArrayList<Integer>();
+            gewicht = new ArrayList<>();
         gewicht.set(satz - 1, gw);
     }
 
     public void setWH(int satz, int wh) {
         if (wiederholungen == null)
-            wiederholungen = new ArrayList<Integer>();
-        wiederholungen.set(satz, wh);
+            wiederholungen = new ArrayList<>();
+        wiederholungen.set(satz - 1, wh);
     }
 
     public void removeSatz(int satz) {

@@ -8,9 +8,9 @@
 
     <Button
         android:id="@+id/add_plan"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="+ Trainingsplan hinzufügen"
+        android:text="@string/add_plan"
         android:onClick="onClickAddPlan"/>
 </LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="muskelgruppen">
+        <item>Brust</item>
+        <item>Ruecken</item>
+        <item>Beine</item>
+        <item>Bizeps</item>
+        <item>Trizpes</item>
+        <item>Schultern</item>
+        <item>Bauch</item>
+    </string-array>
+</resources>

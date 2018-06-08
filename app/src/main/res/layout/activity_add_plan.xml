@@ -8,8 +8,9 @@
         android:id="@+id/textView_nameofplan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name des Trainingsplans*:"
-        android:textSize="18sp" />
+        android:text="@string/nameofplan"
+        android:textSize="18sp"
+        android:labelFor="@id/editText_nameofplan"/>
 
     <EditText
         android:id="@+id/editText_nameofplan"
@@ -21,53 +22,53 @@
         android:id="@+id/textView_day"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Wähle einen Tag für das Training:"
-        android:textSize="18sp"/>
+        android:text="@string/choose_day"
+        android:textSize="18sp"
+        android:labelFor="@id/radioGroup_days"/>
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup_days">
         <RadioButton
             android:id="@+id/button_monday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Montag"/>
+            android:text="@string/monday"/>
         <RadioButton
             android:id="@+id/button_tuesday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dienstag"/>
+            android:text="@string/tuesday"/>
         <RadioButton
             android:id="@+id/button_wednesday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mittwoch"/>
+            android:text="@string/wednesday"/>
         <RadioButton
             android:id="@+id/button_thursday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Donnerstag"/>
+            android:text="@string/thursday"/>
         <RadioButton
             android:id="@+id/button_friday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Freitag"/>
+            android:text="@string/friday"/>
         <RadioButton
             android:id="@+id/button_saturday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Samstag"/>
+            android:text="@string/saturday"/>
         <RadioButton
             android:id="@+id/button_sunday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sonntag"/>
+            android:text="@string/sunday"/>
     </RadioGroup>
     <Button
         android:id="@+id/button_create_plan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Trainingsplan erstellen"
-        android:onClick="onClickCreatePlan"/>
-
+        android:text="@string/create_plan"/>
 
 </LinearLayout>
