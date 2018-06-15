@@ -9,4 +9,59 @@
         <item>Schultern</item>
         <item>Bauch</item>
     </string-array>
+
+    <string-array name="uebungen_brust">
+        <item>Langhantel Bankdrücken</item>
+        <item>Kurzhantel Bankdrücken</item>
+        <item>Brustpresse</item>
+        <item>Butterfly</item>
+        <item>Butterfly nach oben</item>
+        <item>Butterfly nach unten</item>
+    </string-array>
+
+    <string-array name="uebungen_rücken">
+        <item>Rudern</item>
+        <item>Kurzhantel Rudern</item>
+        <item>Butterfly Reverse</item>
+        <item>Langhantel Rudern</item>
+        <item>Latzug</item>
+        <item>Klimmzüge</item>
+    </string-array>
+
+    <string-array name="uebungen_schultern">
+        <item>Schulterpresse am Gerät</item>
+        <item>Schulterpresse mit Kurzhanteln</item>
+        <item>Schulterpresse mit Langhantel</item>
+        <item>Seitheben am Gerät</item>
+        <item>Seitheben mit Kurzhanteln</item>
+        <item>Seitheben am Seilzug</item>
+    </string-array>
+
+    <string-array name="uebungen_bauch">
+        <item>Situps im Liegen</item>
+        <item>Situps mit Winkel</item>
+        <item>Seitdrehen</item>
+    </string-array>
+
+    <string-array name="uebungen_bizeps">
+        <item>Hammer Curls</item>
+        <item>Bizeps Curls</item>
+        <item>S-Z-Stange</item>
+        <item>Hammer Curls am Seilzug</item>
+        <item>Bizeps Curls am Seilzug</item>
+    </string-array>
+
+    <string-array name="uebungen_trizeps">
+        <item>S-Z-Stange</item>
+        <item>am Seilzug mit Seil</item>
+        <item>am Seilzug mit gerader Stange</item>
+    </string-array>
+
+    <string-array name="uebungen_beine">
+        <item>Beinpresse</item>
+        <item>Beinbeuger</item>
+        <item>Beinstrecker</item>
+        <item>Kniebeugen</item>
+        <item>Waden</item>
+    </string-array>
 </resources>

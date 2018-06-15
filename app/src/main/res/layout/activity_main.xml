@@ -7,10 +7,9 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/add_plan"
+        android:id="@+id/button_add_plan"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/add_plan"
-        android:onClick="onClickAddPlan"/>
+        android:text="@string/add_plan"/>
 </LinearLayout>

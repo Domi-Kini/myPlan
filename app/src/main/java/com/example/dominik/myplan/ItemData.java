@@ -1,10 +1,12 @@
 package com.example.dominik.myplan;
 
+import android.media.Image;
+
 public class ItemData {
     private String title;
     private int imageUrl;
 
-    ItemData(String title, int imageUrl) {
+    public ItemData(String title, int imageUrl) {
         this.title = title;
         this.imageUrl = imageUrl;
     }

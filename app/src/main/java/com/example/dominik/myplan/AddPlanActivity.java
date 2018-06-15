@@ -21,7 +21,7 @@ public class AddPlanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_plan);
         final EditText PlanName = (EditText) findViewById(R.id.editText_nameofplan);
 
-        final Button createPlanButton = findViewById(R.id.button_create_plan);
+        final Button createPlanButton = (Button) findViewById(R.id.button_create_plan);
         createPlanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +35,7 @@ public class AddPlanActivity extends AppCompatActivity {
                 } else {
                     Intent openAddUebungIntent = new Intent(v.getContext(), AddUebungenActivity.class);
                     startActivity(openAddUebungIntent);
+                    finish();
                 }
             }
         });

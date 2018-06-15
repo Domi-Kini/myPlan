@@ -22,6 +22,9 @@
         <activity android:name=".AddUebungenActivity">
 
         </activity>
+        <activity android:name=".UebungenActivity">
+
+        </activity>
     </application>
 
 </manifest>
