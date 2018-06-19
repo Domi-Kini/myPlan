@@ -50,7 +50,7 @@ public class UebungenActivity extends AppCompatActivity {
                 {
                     String[] title = getResources().getStringArray(R.array.uebungen_brust);
                     for (int i = 0; i < title.length; i++) {
-                        mDataset.add(new ItemData(title[i], R.drawable.mucles_chest));
+                        mDataset.add(new ItemData(title[i], R.drawable.mucles_chest, true));
                     }
                 }
                 break;
@@ -58,7 +58,7 @@ public class UebungenActivity extends AppCompatActivity {
                 {
                     String[] title = getResources().getStringArray(R.array.uebungen_rücken);
                     for (int i = 0; i < title.length; i++) {
-                        mDataset.add(new ItemData(title[i], R.drawable.mucles_back));
+                        mDataset.add(new ItemData(title[i], R.drawable.mucles_back, true));
                     }
                 }
                 break;
@@ -66,7 +66,7 @@ public class UebungenActivity extends AppCompatActivity {
                 {
                     String[] title = getResources().getStringArray(R.array.uebungen_schultern);
                     for (int i = 0; i < title.length; i++) {
-                        mDataset.add(new ItemData(title[i], R.drawable.mucles_shoulders));
+                        mDataset.add(new ItemData(title[i], R.drawable.mucles_shoulders, true));
                     }
                 }
                 break;
@@ -74,7 +74,7 @@ public class UebungenActivity extends AppCompatActivity {
             {
                 String[] title = getResources().getStringArray(R.array.uebungen_bauch);
                 for (int i = 0; i < title.length; i++) {
-                    mDataset.add(new ItemData(title[i], R.drawable.mucles_abdominals));
+                    mDataset.add(new ItemData(title[i], R.drawable.mucles_abdominals, true));
                 }
             }
                 break;
@@ -82,7 +82,7 @@ public class UebungenActivity extends AppCompatActivity {
             {
                 String[] title = getResources().getStringArray(R.array.uebungen_bizeps);
                 for (int i = 0; i < title.length; i++) {
-                    mDataset.add(new ItemData(title[i], R.drawable.mucles_biceps));
+                    mDataset.add(new ItemData(title[i], R.drawable.mucles_biceps, true));
                 }
             }
                 break;
@@ -90,7 +90,7 @@ public class UebungenActivity extends AppCompatActivity {
             {
                 String[] title = getResources().getStringArray(R.array.uebungen_trizeps);
                 for (int i = 0; i < title.length; i++) {
-                    mDataset.add(new ItemData(title[i], R.drawable.mucles_triceps));
+                    mDataset.add(new ItemData(title[i], R.drawable.mucles_triceps, true));
                 }
             }
                 break;
@@ -98,7 +98,7 @@ public class UebungenActivity extends AppCompatActivity {
             {
                 String[] title = getResources().getStringArray(R.array.uebungen_beine);
                 for (int i = 0; i < title.length; i++) {
-                    mDataset.add(new ItemData(title[i], R.drawable.mucles_legs));
+                    mDataset.add(new ItemData(title[i], R.drawable.mucles_legs, true));
                 }
             }
                 break;

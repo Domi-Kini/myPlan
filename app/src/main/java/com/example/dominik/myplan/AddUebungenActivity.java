@@ -39,12 +39,12 @@ public class AddUebungenActivity extends AppCompatActivity {
 
     private void addAllImages(ArrayList<ItemData> mDataset) {
         ArrayList<String> TitleArray = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.muskelgruppen)));
-        mDataset.add(new ItemData(TitleArray.get(0), R.drawable.mucles_chest));
-        mDataset.add(new ItemData(TitleArray.get(1), R.drawable.mucles_back));
-        mDataset.add(new ItemData(TitleArray.get(2), R.drawable.mucles_legs));
-        mDataset.add(new ItemData(TitleArray.get(3), R.drawable.mucles_biceps));
-        mDataset.add(new ItemData(TitleArray.get(4), R.drawable.mucles_triceps));
-        mDataset.add(new ItemData(TitleArray.get(5), R.drawable.mucles_shoulders));
-        mDataset.add(new ItemData(TitleArray.get(6), R.drawable.mucles_abdominals));
+        mDataset.add(new ItemData(TitleArray.get(0), R.drawable.mucles_chest, false));
+        mDataset.add(new ItemData(TitleArray.get(1), R.drawable.mucles_back, false));
+        mDataset.add(new ItemData(TitleArray.get(2), R.drawable.mucles_legs, false));
+        mDataset.add(new ItemData(TitleArray.get(3), R.drawable.mucles_biceps, false));
+        mDataset.add(new ItemData(TitleArray.get(4), R.drawable.mucles_triceps, false));
+        mDataset.add(new ItemData(TitleArray.get(5), R.drawable.mucles_shoulders, false));
+        mDataset.add(new ItemData(TitleArray.get(6), R.drawable.mucles_abdominals, false));
     }
 }

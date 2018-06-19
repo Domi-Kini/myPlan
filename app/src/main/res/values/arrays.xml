@@ -11,12 +11,12 @@
     </string-array>
 
     <string-array name="uebungen_brust">
-        <item>Langhantel Bankdrücken</item>
-        <item>Kurzhantel Bankdrücken</item>
+        <item>Bankdrücken Langhantel</item>
+        <item>Bankdrücken Kurzhantel</item>
         <item>Brustpresse</item>
         <item>Butterfly</item>
-        <item>Butterfly nach oben</item>
-        <item>Butterfly nach unten</item>
+        <item>Butterfly am Seilzug nach oben</item>
+        <item>Butterfly am Seilzug nach unten</item>
     </string-array>
 
     <string-array name="uebungen_rücken">

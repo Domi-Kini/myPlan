@@ -25,6 +25,10 @@
         <activity android:name=".UebungenActivity">
 
         </activity>
+        <activity android:name=".ConfigureUebungActivity">
+
+        </activity>
+
     </application>
 
 </manifest>

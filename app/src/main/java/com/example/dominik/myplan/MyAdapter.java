@@ -47,10 +47,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
             @Override
             public void onClick(View v) {
                 Log.e(TAG, "onClick: clicked on" + mDataset.get(position).getTitle());
-
-                Intent intent = new Intent(mContext, UebungenActivity.class);
-                intent.putExtra("muclegroup_name", mDataset.get(position).getTitle());
-                mContext.startActivity(intent);
+                if(mDataset.get(position).isChild()) {
+                    Log.e(TAG, "opends next Activity");
+                    Intent intent = new Intent(mContext, ConfigureUebungActivity.class);
+                    intent.putExtra("uebung_name", mDataset.get(position).getTitle());
+                    mContext.startActivity(intent);
+                } else {
+                    Intent intent = new Intent(mContext, UebungenActivity.class);
+                    intent.putExtra("muclegroup_name", mDataset.get(position).getTitle());
+                    mContext.startActivity(intent);
+                }
             }
         });
     }
