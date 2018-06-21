@@ -1,13 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout   xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/configure_uebung_constraint_layout">
 
     <ImageView
         android:id="@+id/image_uebung"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:contentDescription="Uebung" />
+        android:contentDescription="Uebung"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gewicht_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="50dp"
+        android:text="Gewicht"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_uebung" />
+
+    <TextView
+        android:id="@+id/wiederholung_text"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:text="Wiederholungen"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/gewicht_text"
+        app:layout_constraintStart_toEndOf="@+id/gewicht_text"
+        app:layout_constraintTop_toTopOf="@+id/gewicht_text" />
+
+    <Button
+        android:id="@+id/satz_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="neuer Satz"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gewicht_text" />
+
+    <EditText
+        android:id="@+id/wiederholung_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:width="50dp"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/gewicht_input"
+        app:layout_constraintEnd_toEndOf="@+id/wiederholung_text"
+        app:layout_constraintStart_toStartOf="@+id/wiederholung_text"
+        app:layout_constraintTop_toTopOf="@+id/gewicht_input" />
+
+    <EditText
+        android:id="@+id/gewicht_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:width="50dp"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/satz_button"
+        app:layout_constraintEnd_toEndOf="@+id/gewicht_text"
+        app:layout_constraintStart_toStartOf="@+id/gewicht_text"
+        app:layout_constraintTop_toTopOf="@+id/satz_button" />
+
+    <Button
+        android:id="@+id/add_uebung_button"
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Hinzufügen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/satz_button" />
 
 </android.support.constraint.ConstraintLayout>
