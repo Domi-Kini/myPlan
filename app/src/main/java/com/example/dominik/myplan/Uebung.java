@@ -4,18 +4,11 @@ import java.util.*;
 
 public class Uebung {
     private String name;
-    private List<Integer> wiederholungen;
-    private int saetze;
-    private List<Integer> gewicht;
+    private List<Satz> saetze;
 
-    public Uebung(String name, int saetze, int[] gewicht, int[] wh) {
+    public Uebung(String name, Satz[] saetze) {
         this.name = name;
-        this.gewicht = new ArrayList<>();
-        wiederholungen = new ArrayList<>();
-        for(int i = 0; i < saetze; i++) {
-            this.gewicht.add(gewicht[i]);
-            wiederholungen.add(wh[i]);
-        }
+        this.saetze = new ArrayList<>(Arrays.asList(saetze));
     }
 
     public String getName() {
@@ -23,37 +16,29 @@ public class Uebung {
     }
 
     public void setGewicht(int satz, int gw) {
-        if (gewicht == null)
-            gewicht = new ArrayList<>();
-        gewicht.set(satz - 1, gw);
+        saetze.get(satz - 1).setGewicht(gw);
     }
 
     public void setWH(int satz, int wh) {
-        if (wiederholungen == null)
-            wiederholungen = new ArrayList<>();
-        wiederholungen.set(satz - 1, wh);
+        saetze.get(satz - 1).setWiederholungen(wh);
     }
 
     public void removeSatz(int satz) {
-        saetze -= 1;
-        gewicht.remove(satz - 1);
-        wiederholungen.remove(satz - 1);
+        saetze.remove(satz - 1);
     }
 
-    public void addSatz(int gewicht, int wh) {
-        saetze += 1;
-        this.gewicht.add(gewicht);
-        this.gewicht.add(wh);
+    public void addSatz(Satz satz) {
+        saetze.add(satz);
     }
 
     public int getGewicht(int satz) {
-        return gewicht.get(satz - 1);
+        return saetze.get(satz - 1).getGewicht();
     }
     public int getWH(int satz) {
-        return gewicht.get(satz - 1);
+        return saetze.get(satz - 1).getWiederholungen();
     }
     public int getSaetze() {
-        return saetze;
+        return saetze.size();
     }
 
 }
