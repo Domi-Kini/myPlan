@@ -36,18 +36,16 @@ public class ConfigureUebungActivity extends AppCompatActivity {
         Image.setImageResource(R.drawable.uebung_schraegbankdruecken);
 
         addButton = (Button) findViewById(R.id.button_hinzufuegen);
+        addSatzButton = (Button) findViewById(R.id.button_add_satz);
         linearParent = (LinearLayout) findViewById(R.id.linearLayout_parent);
         View scrollViewChildElem = LayoutInflater.from(this).inflate(R.layout.layout_satz_element, linearParent,false);
 
-        addSatzButton = (Button) scrollViewChildElem.findViewById(R.id.button_add_satz);
-        addSatzButton.setVisibility(View.VISIBLE);
         gewichte = new ArrayList<>();
         gewichte.add((EditText) scrollViewChildElem.findViewById(R.id.edittext_gewicht));
         wiederholungen = new ArrayList<>();
         wiederholungen.add((EditText) scrollViewChildElem.findViewById(R.id.edittext_wiederholung));
 
         linearParent.addView(scrollViewChildElem);
-
 
         addSatzButton.setOnClickListener(new View.OnClickListener() {
             @Override

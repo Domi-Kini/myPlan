@@ -66,6 +66,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
+    <Button
+        android:id="@+id/button_add_satz"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="neuer Satz"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_gewicht" />
+
     <ScrollView
         android:id="@+id/scrollview_configure_uebung"
         android:layout_width="0dp"
@@ -74,15 +84,14 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/button_hinzufuegen"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/text_gewicht">
+
         <LinearLayout
             android:id="@+id/linearLayout_parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-        </LinearLayout>
+            android:orientation="vertical"></LinearLayout>
 
     </ScrollView>
 
