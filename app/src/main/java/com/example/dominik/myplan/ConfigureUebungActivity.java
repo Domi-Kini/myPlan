@@ -84,7 +84,7 @@ public class ConfigureUebungActivity extends AppCompatActivity {
     }
 
     private boolean isvalid() {
-        if(gewichte.get(0).getText().toString().isEmpty() && wiederholungen.get(0).getText().toString().isEmpty())
+        if(gewichte.get(0).getText().toString().isEmpty() && wiederholungen.get(0).getText().toString().isEmpty() && gewichte.size() == 1)
             return false;
         for (int i = 0; i < gewichte.size(); i++) {
             if (gewichte.get(i).getText().toString().isEmpty() && !wiederholungen.get(i).getText().toString().isEmpty())
