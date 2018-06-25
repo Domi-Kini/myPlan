@@ -16,19 +16,37 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddPlanActivity">
+        <activity android:name=".AddPlanActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dominik.myplan.MainActivity" />
 
         </activity>
-        <activity android:name=".AddUebungenActivity">
+        <activity android:name=".MuscleGroupActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dominik.myplan.MainActivity" />
 
         </activity>
-        <activity android:name=".UebungenActivity">
+        <activity
+            android:name=".UebungenActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dominik.myplan.MainActivity" />
+        </activity>
+        <activity android:name=".ConfigureUebungActivity"
+            android:parentActivityName=".UebungenActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dominik.myplan.UebungenActivity" />
 
         </activity>
-        <activity android:name=".ConfigureUebungActivity">
+        <activity android:name=".PlanActivity">
 
         </activity>
-
     </application>
 
 </manifest>

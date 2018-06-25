@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Trainingsplan {
     private String name;
-    private List<Uebung> uebungen;
-    private int tag;
+    private ArrayList<Uebung> uebungen;
+    private String tag;
 
     public Trainingsplan(String name) {
         this.name = name;
@@ -14,10 +14,13 @@ public class Trainingsplan {
     public void changeName(String name) {
         this.name = name;
     }
+    public String getName() {
+        return name;
+    }
 
     public void setUebung(Uebung e) {
         if (uebungen == null)
-            uebungen = new ArrayList<Uebung>();
+            uebungen = new ArrayList<>();
         uebungen.add(e);
     }
 
@@ -25,20 +28,21 @@ public class Trainingsplan {
         uebungen.remove(ind);
     }
 
-    public void setTag(int tag) {
+    public ArrayList<Uebung> getUebungen() {
+        return uebungen;
+    }
+
+    public Uebung getUebung(int ind) {
+        return uebungen.get(ind);
+    }
+
+    public void setTag(String tag) {
         this.tag = tag;
     }
 
     public String getTag() {
-        switch (tag) {
-            case 1: return "Montag";
-            case 2 : return "Dienstag";
-            case 3: return "Mittwoch";
-            case 4: return "Donnerstag";
-            case 5: return "Freitag";
-            case 6: return "Samstag";
-            case 7: return "Sonntag";
-            default: return "kein Tag ausgewaehlt";
-        }
+        if (tag != null)
+            return tag;
+        return "Kein Tag ausgewählt";
     }
 }

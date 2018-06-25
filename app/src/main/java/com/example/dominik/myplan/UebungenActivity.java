@@ -1,12 +1,17 @@
 package com.example.dominik.myplan;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -16,10 +21,11 @@ public class UebungenActivity extends AppCompatActivity {
 
     private ArrayList<ItemData> mDataset;
     private String mTitle;
+    MySingleton singleton = MySingleton.getInstance();
 
     RecyclerView mRecyclerView;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_add_uebungen);
@@ -27,12 +33,39 @@ public class UebungenActivity extends AppCompatActivity {
         getIncomingIntent();
         setDataset();
 
+        TextView textTitle = (TextView) findViewById(R.id.text_uebung_title);
+        textTitle.setText(mTitle);
+
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        mRecyclerView.setLayoutManager(layoutManager);
         MyAdapter adapter = new MyAdapter(this, mDataset);
         mRecyclerView.setAdapter(adapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        Button createPlanButton = (Button) findViewById(R.id.button_create_plan);
+        createPlanButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (singleton.getRightPlan().getUebungen() != null) {
+                    finish();
+                } else {
+                    Toast toast = Toast.makeText(v.getContext(), "Bitte füge zuerst eine Übung hinzu.", Toast.LENGTH_LONG);
+                    TextView tview = (TextView) toast.getView().findViewById(android.R.id.message);
+                    tview.setTextColor(Color.RED);
+                    tview.setGravity(Gravity.CENTER);
+                    toast.show();
+                }
+            }
+        });
+
+        Button cancelButton = (Button) findViewById(R.id.button_cancel_plan);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //singleton.getPlans().remove(singleton.getIndex());
+                //getParent().setResult(MuscleGroupActivity.RESULT_FINISH);
+                finish();
+            }
+        });
     }
 
     private void getIncomingIntent() {
@@ -50,7 +83,7 @@ public class UebungenActivity extends AppCompatActivity {
                 {
                     String[] title = getResources().getStringArray(R.array.uebungen_brust);
                     for (int i = 0; i < title.length; i++) {
-                        mDataset.add(new ItemData(title[i], R.drawable.mucles_chest, true));
+                        mDataset.add(new ItemData(title[i], R.drawable.mucles_chest, ItemData.UEBUNG));
                     }
                 }
                 break;
@@ -58,7 +91,7 @@ public class UebungenActivity extends AppCompatActivity {
                 {
                     String[] title = getResources().getStringArray(R.array.uebungen_rücken);
                     for (int i = 0; i < title.length; i++) {
-                        mDataset.add(new ItemData(title[i], R.drawable.mucles_back, true));
+                        mDataset.add(new ItemData(title[i], R.drawable.mucles_back, ItemData.UEBUNG));
                     }
                 }
                 break;
@@ -66,7 +99,7 @@ public class UebungenActivity extends AppCompatActivity {
                 {
                     String[] title = getResources().getStringArray(R.array.uebungen_schultern);
                     for (int i = 0; i < title.length; i++) {
-                        mDataset.add(new ItemData(title[i], R.drawable.mucles_shoulders, true));
+                        mDataset.add(new ItemData(title[i], R.drawable.mucles_shoulders, ItemData.UEBUNG));
                     }
                 }
                 break;
@@ -74,7 +107,7 @@ public class UebungenActivity extends AppCompatActivity {
             {
                 String[] title = getResources().getStringArray(R.array.uebungen_bauch);
                 for (int i = 0; i < title.length; i++) {
-                    mDataset.add(new ItemData(title[i], R.drawable.mucles_abdominals, true));
+                    mDataset.add(new ItemData(title[i], R.drawable.mucles_abdominals, ItemData.UEBUNG));
                 }
             }
                 break;
@@ -82,7 +115,7 @@ public class UebungenActivity extends AppCompatActivity {
             {
                 String[] title = getResources().getStringArray(R.array.uebungen_bizeps);
                 for (int i = 0; i < title.length; i++) {
-                    mDataset.add(new ItemData(title[i], R.drawable.mucles_biceps, true));
+                    mDataset.add(new ItemData(title[i], R.drawable.mucles_biceps, ItemData.UEBUNG));
                 }
             }
                 break;
@@ -90,7 +123,7 @@ public class UebungenActivity extends AppCompatActivity {
             {
                 String[] title = getResources().getStringArray(R.array.uebungen_trizeps);
                 for (int i = 0; i < title.length; i++) {
-                    mDataset.add(new ItemData(title[i], R.drawable.mucles_triceps, true));
+                    mDataset.add(new ItemData(title[i], R.drawable.mucles_triceps, ItemData.UEBUNG));
                 }
             }
                 break;
@@ -98,7 +131,7 @@ public class UebungenActivity extends AppCompatActivity {
             {
                 String[] title = getResources().getStringArray(R.array.uebungen_beine);
                 for (int i = 0; i < title.length; i++) {
-                    mDataset.add(new ItemData(title[i], R.drawable.mucles_legs, true));
+                    mDataset.add(new ItemData(title[i], R.drawable.mucles_legs, ItemData.UEBUNG));
                 }
             }
                 break;
