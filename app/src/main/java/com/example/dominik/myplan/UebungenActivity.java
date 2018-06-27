@@ -19,6 +19,9 @@ public class UebungenActivity extends AppCompatActivity {
 
     private static final String TAG = "UebungenActivity";
 
+    public static final int SAFE = 0;
+    public static final int CANCEL = 1;
+
     private ArrayList<ItemData> mDataset;
     private String mTitle;
     MySingleton singleton = MySingleton.getInstance();
@@ -45,15 +48,7 @@ public class UebungenActivity extends AppCompatActivity {
         createPlanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (singleton.getRightPlan().getUebungen() != null) {
-                    finish();
-                } else {
-                    Toast toast = Toast.makeText(v.getContext(), "Bitte füge zuerst eine Übung hinzu.", Toast.LENGTH_LONG);
-                    TextView tview = (TextView) toast.getView().findViewById(android.R.id.message);
-                    tview.setTextColor(Color.RED);
-                    tview.setGravity(Gravity.CENTER);
-                    toast.show();
-                }
+                create();
             }
         });
 
@@ -61,11 +56,27 @@ public class UebungenActivity extends AppCompatActivity {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //singleton.getPlans().remove(singleton.getIndex());
-                //getParent().setResult(MuscleGroupActivity.RESULT_FINISH);
-                finish();
+                cancel();
             }
         });
+    }
+
+    private void cancel() {
+        setResult(CANCEL);
+        finish();
+    }
+
+    private void create() {
+        if (singleton.getRightPlan().getUebungen() != null) {
+            setResult(SAFE);
+            finish();
+        } else {
+            Toast toast = Toast.makeText(UebungenActivity.this, "Bitte füge zuerst eine Übung hinzu.", Toast.LENGTH_LONG);
+            TextView tview = (TextView) toast.getView().findViewById(android.R.id.message);
+            tview.setTextColor(Color.RED);
+            tview.setGravity(Gravity.CENTER);
+            toast.show();
+        }
     }
 
     private void getIncomingIntent() {

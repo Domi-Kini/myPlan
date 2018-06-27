@@ -11,57 +11,81 @@
     </string-array>
 
     <string-array name="uebungen_brust">
-        <item>Bankdrücken Langhantel</item>
-        <item>Bankdrücken Kurzhantel</item>
-        <item>Brustpresse</item>
-        <item>Butterfly</item>
-        <item>Butterfly am Seilzug nach oben</item>
-        <item>Butterfly am Seilzug nach unten</item>
+        <item>Bankdrücken</item>
+        <item>Schrägbankdrücken</item>
+        <item>Kurzhanteldrücken</item>
+        <item>Paralleles Stangenbeugen</item>
+        <item>Kabelbrücken Fliegen</item>
+        <item>Hantelfliegen</item>
+        <item>Hantelüberzug</item>
+        <item>Liegestützen</item>
+        <item>Kurzhanteldrücken</item>
+        <item>Schmetterlinge</item>
     </string-array>
 
     <string-array name="uebungen_rücken">
-        <item>Rudern</item>
-        <item>Kurzhantel Rudern</item>
-        <item>Butterfly Reverse</item>
-        <item>Langhantel Rudern</item>
-        <item>Latzug</item>
         <item>Klimmzüge</item>
+        <item>Kreuzheben</item>
+        <item>Latziehen</item>
+        <item>Sitzendes Rudern</item>
+        <item>Einarmiges Kurzhantelrudern</item>
+        <item>Kurzhantel-Achselzucken</item>
+        <item>Langhantel-Achselzucken</item>
+        <item>Rückenverlängerungen</item>
+        <item>Gebücktes Rudern</item>
+        <item>Gebeugtes Kurzhantelrudern</item>
+        <item>Gebeugtes T-Stangen-Rudern</item>
     </string-array>
 
     <string-array name="uebungen_schultern">
-        <item>Schulterpresse am Gerät</item>
-        <item>Schulterpresse mit Kurzhanteln</item>
-        <item>Schulterpresse mit Langhantel</item>
-        <item>Seitheben am Gerät</item>
-        <item>Seitheben mit Kurzhanteln</item>
-        <item>Seitheben am Seilzug</item>
+        <item>Rückendrücken</item>
+        <item>Sitzendes Einständerpressen</item>
+        <item>Sitzendes Kurzhanteldrücken</item>
+        <item>Seitheben der unteren Umlenkrolle</item>
+        <item>Senkrechtes Rudern</item>
+        <item>Seitheben</item>
+        <item>Frontheben</item>
+        <item>Langhantelfrontheben</item>
+        <item>Hinteres Schmetterlingsseitheben</item>
+        <item>Kurzhantel Vogelscheuche</item>
     </string-array>
 
     <string-array name="uebungen_bauch">
-        <item>Situps im Liegen</item>
-        <item>Situps mit Winkel</item>
-        <item>Seitdrehen</item>
+        <item>Hantelbank Sit-ups</item>
+        <item>Freiragendes Beinheben</item>
+        <item>Hantel-Seitneigung</item>
+        <item>Sit-ups</item>
+        <item>Beinheben</item>
+        <item>Seitenbrücke</item>
+        <item>Superman</item>
     </string-array>
 
     <string-array name="uebungen_bizeps">
-        <item>Hammer Curls</item>
-        <item>Bizeps Curls</item>
-        <item>S-Z-Stange</item>
-        <item>Hammer Curls am Seilzug</item>
-        <item>Bizeps Curls am Seilzug</item>
+        <item>Kurzhantel-Curls</item>
+        <item>Langhantel-Curls</item>
+        <item>Priesterübung</item>
+        <item>Hammer-Curls</item>
+        <item>Kabelbizepsübung</item>
+        <item>Untere Kabelrollbrücke</item>
     </string-array>
 
     <string-array name="uebungen_trizeps">
-        <item>S-Z-Stange</item>
-        <item>am Seilzug mit Seil</item>
-        <item>am Seilzug mit gerader Stange</item>
+        <item>Bankdrücken mit engem Griff</item>
+        <item>Hinunterdrücken</item>
+        <item>Trizepsverlängerung</item>
+        <item>Trizepsrückschläge</item>
+        <item>Einarmige Trizepshantelverlängerung</item>
+        <item>Trizepsvertiefungen</item>
+        <item>Diamant Liegestützen</item>
     </string-array>
 
     <string-array name="uebungen_beine">
-        <item>Beinpresse</item>
-        <item>Beinbeuger</item>
-        <item>Beinstrecker</item>
         <item>Kniebeugen</item>
-        <item>Waden</item>
+        <item>Beinpresse</item>
+        <item>Beinstrecken</item>
+        <item>Beinbeugen</item>
+        <item>Hantelausfallschritte</item>
+        <item>Kabelrückziehen</item>
+        <item>Bankspringen</item>
     </string-array>
 </resources>

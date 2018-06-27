@@ -21,7 +21,7 @@ import java.util.Collections;
 import java.util.Random;
 
 public class MuscleGroupActivity extends AppCompatActivity {
-    public static final int RESULT_FINISH = 0;
+    public static final int REQUEST_FINISH = 0;
 
     RecyclerView mRecyclerView;
     MyAdapter mAdapter;
@@ -47,15 +47,7 @@ public class MuscleGroupActivity extends AppCompatActivity {
         createPlanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (singleton.getRightPlan().getUebungen() != null) {
-                    finish();
-                } else {
-                    Toast toast = Toast.makeText(v.getContext(), "Bitte füge zuerst eine Übung hinzu.", Toast.LENGTH_LONG);
-                    TextView tview = (TextView) toast.getView().findViewById(android.R.id.message);
-                    tview.setTextColor(Color.RED);
-                    tview.setGravity(Gravity.CENTER);
-                    toast.show();
-                }
+                create();
             }
         });
 
@@ -63,20 +55,50 @@ public class MuscleGroupActivity extends AppCompatActivity {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                singleton.getPlans().remove(singleton.getIndex());
-                finish();
+                cancel();
             }
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_FINISH) {
+            switch(resultCode) {
+                case UebungenActivity.CANCEL:
+                    cancel();
+                    break;
+                case UebungenActivity.SAFE:
+                    create();
+                    break;
+            }
+        }
+    }
+
+    private void create() {
+        if (singleton.getRightPlan().getUebungen() != null) {
+            finish();
+        } else {
+            Toast toast = Toast.makeText(MuscleGroupActivity.this, "Bitte füge zuerst eine Übung hinzu.", Toast.LENGTH_LONG);
+            TextView tview = (TextView) toast.getView().findViewById(android.R.id.message);
+            tview.setTextColor(Color.RED);
+            tview.setGravity(Gravity.CENTER);
+            toast.show();
+        }
+    }
+
+    private void cancel() {
+        singleton.getPlans().remove(singleton.getIndex());
+        finish();
+    }
+
     private void addAllImages(ArrayList<ItemData> mDataset) {
         ArrayList<String> TitleArray = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.muskelgruppen)));
-        mDataset.add(new ItemData(TitleArray.get(0), R.drawable.mucles_chest, ItemData.GROUP));
-        mDataset.add(new ItemData(TitleArray.get(1), R.drawable.mucles_back, ItemData.GROUP));
-        mDataset.add(new ItemData(TitleArray.get(2), R.drawable.mucles_legs, ItemData.GROUP));
-        mDataset.add(new ItemData(TitleArray.get(3), R.drawable.mucles_biceps, ItemData.GROUP));
-        mDataset.add(new ItemData(TitleArray.get(4), R.drawable.mucles_triceps, ItemData.GROUP));
-        mDataset.add(new ItemData(TitleArray.get(5), R.drawable.mucles_shoulders, ItemData.GROUP));
-        mDataset.add(new ItemData(TitleArray.get(6), R.drawable.mucles_abdominals, ItemData.GROUP));
+        mDataset.add(new ItemData(TitleArray.get(0), R.drawable.group_chest, ItemData.GROUP));
+        mDataset.add(new ItemData(TitleArray.get(1), R.drawable.group_back, ItemData.GROUP));
+        mDataset.add(new ItemData(TitleArray.get(2), R.drawable.group_legs, ItemData.GROUP));
+        mDataset.add(new ItemData(TitleArray.get(3), R.drawable.group_arms, ItemData.GROUP));
+        mDataset.add(new ItemData(TitleArray.get(4), R.drawable.group_arms, ItemData.GROUP));
+        mDataset.add(new ItemData(TitleArray.get(5), R.drawable.group_shoulders, ItemData.GROUP));
+        mDataset.add(new ItemData(TitleArray.get(6), R.drawable.group_abdominals, ItemData.GROUP));
     }
 }

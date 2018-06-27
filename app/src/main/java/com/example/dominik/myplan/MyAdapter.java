@@ -1,5 +1,6 @@
 package com.example.dominik.myplan;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
@@ -60,27 +61,27 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
             @Override
             public void onClick(View v) {
                 Log.e(TAG, "onClick: clicked on" + mDataset.get(position).getTitle());
-                Intent intent;
                 switch(mDataset.get(position).getType()) {
                     case ItemData.GROUP:
-                        intent = new Intent(mContext, UebungenActivity.class);
-                        intent.putExtra("muclegroup_name", mDataset.get(position).getTitle());
+                        Intent intent_group = new Intent(mContext, UebungenActivity.class);
+                        intent_group.putExtra("muclegroup_name", mDataset.get(position).getTitle());
+                        ((Activity) mContext).startActivityForResult(intent_group, MuscleGroupActivity.REQUEST_FINISH);
                         break;
                     case ItemData.UEBUNG:
                         Log.e(TAG, "opends next Activity");
-                        intent = new Intent(mContext, ConfigureUebungActivity.class);
-                        intent.putExtra("uebung_name", mDataset.get(position).getTitle());
+                        Intent intent_uebung = new Intent(mContext, ConfigureUebungActivity.class);
+                        intent_uebung.putExtra("uebung_name", mDataset.get(position).getTitle());
+                        mContext.startActivity(intent_uebung);
                         break;
                     case ItemData.PLAN:
                         singleton.setIndex(position);
-                        intent = new Intent(mContext, PlanActivity.class);
+                        Intent intent_plan = new Intent(mContext, PlanActivity.class);
+                        mContext.startActivity(intent_plan);
                         break;
                     default:
                         //should never happen:
                         Log.e("MyAdapter", "onClick: wrong type");
-                        intent = new Intent(mContext, MainActivity.class);
                 }
-                mContext.startActivity(intent);
             }
         });
     }
