@@ -18,8 +18,6 @@ import java.util.ArrayList;
 
 public class UebungenActivity extends AppCompatActivity {
 
-    private static final String TAG = "UebungenActivity";
-
     public static final int SAFE = 1;
     public static final int CANCEL = 2;
 
@@ -83,7 +81,6 @@ public class UebungenActivity extends AppCompatActivity {
 
     private void getIncomingIntent() {
         if (getIntent().hasExtra("musclegroup")) {
-            Log.d(TAG, "getIncomingIntent: found intent extras");
             group = getIntent().getIntExtra("musclegroup", -1);
 
             mTitle = getTitle(group);
@@ -129,7 +126,6 @@ public class UebungenActivity extends AppCompatActivity {
                 images = getResources().obtainTypedArray(R.array.images_beine);
                 break;
             default:
-                Log.e(TAG, "in setDataset: SOMETHING IS WRONG, can't find right group");
                 title = new String[1];
                 title[0] = "Error";
                 images = getResources().obtainTypedArray(R.array.images_group);

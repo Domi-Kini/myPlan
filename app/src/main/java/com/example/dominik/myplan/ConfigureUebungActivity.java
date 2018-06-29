@@ -23,8 +23,6 @@ import java.util.ArrayList;
 
 public class ConfigureUebungActivity extends AppCompatActivity {
 
-    private static final String TAG = "ConfigureUebungActivity";
-
     private ArrayList<EditText> gewichte;
     private ArrayList<EditText> wiederholungen;
     private LinearLayout linearParent;
@@ -134,8 +132,6 @@ public class ConfigureUebungActivity extends AppCompatActivity {
 
     private void getIncomingIntent() {
         if (getIntent().hasExtra("uebung_name")) {
-            Log.d(TAG, "getIncomingIntent: found intent uebung_name");
-
             mTitle = getIntent().getStringExtra("uebung_name");
         }
         if (getIntent().hasExtra("group")) {

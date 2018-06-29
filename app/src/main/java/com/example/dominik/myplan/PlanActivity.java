@@ -20,7 +20,6 @@ public class PlanActivity extends AppCompatActivity {
     private static final String TAG = "PlanActivity";
 
     private MySingleton singleton = MySingleton.getInstance();
-    //private RecyclerView mRecyclerView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -22,8 +22,6 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> {
 
-    private static final String TAG = "MyAdapter";
-
     private Context mContext;
     private ArrayList<ItemData> mDataset;
     private LayoutInflater mInflater;
@@ -38,7 +36,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
     @Override
     public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemLayoutView = mInflater.inflate(R.layout.layout_recycler_view, parent, false);
-        Log.e(TAG, "Creating ViewHolder");
         return new CustomViewHolder(itemLayoutView);
     }
 
@@ -66,14 +63,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e(TAG, "onClick: clicked on" + mDataset.get(position).getTitle());
                 int typeFlag = mDataset.get(position).getType();
                 if ((typeFlag & ItemData.GROUP) == ItemData.GROUP) {
                     Intent intent_group = new Intent(mContext, UebungenActivity.class);
                     intent_group.putExtra("musclegroup", position);
                     ((Activity) mContext).startActivityForResult(intent_group, MuscleGroupActivity.REQUEST_FINISH);
                 } else if ((typeFlag & ItemData.UEBUNG) == ItemData.UEBUNG) {
-                    Log.e(TAG, "opends next Activity");
                     Intent intent_uebung;
                     if (mDataset.get(position).isExistingUebung())
                         intent_uebung = new Intent(mContext, ShowUebungActivity.class);
@@ -84,14 +79,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
                     intent_uebung.putExtra("uebung_name", mDataset.get(position).getTitle());
                     intent_uebung.putExtra("position", position);
                     intent_uebung.putExtra("group", mDataset.get(position).getGroup());
-                    Log.e(TAG, "starting Show Activity");
                     mContext.startActivity(intent_uebung);
                 } else if ((typeFlag & ItemData.PLAN) == ItemData.PLAN) {
                     singleton.setIndex(position);
                     Intent intent_plan = new Intent(mContext, PlanActivity.class);
                     mContext.startActivity(intent_plan);
-                } else {
-                    Log.e("MyAdapter", "onClick: wrong type");
                 }
             }
         });

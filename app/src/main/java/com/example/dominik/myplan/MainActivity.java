@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         String data = readData();
         if (data != null && !data.isEmpty()) {
-            Log.e("JSON data: ", data);
             Trainingsplan[] plan = new Gson().fromJson(data, Trainingsplan[].class);
 
             ArrayList<Trainingsplan> plaene =new ArrayList<Trainingsplan>(Arrays.asList(plan));

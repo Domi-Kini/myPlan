@@ -18,8 +18,6 @@ import java.util.ArrayList;
 
 public class ShowUebungActivity extends AppCompatActivity {
 
-    private static final String TAG = "ShowUebungActivity";
-
     private LinearLayout linearParent;
     private MySingleton singelton = MySingleton.getInstance();
     private String mTitle;
@@ -51,31 +49,23 @@ public class ShowUebungActivity extends AppCompatActivity {
             scrollViewChildElem = LayoutInflater.from(this).inflate(R.layout.layout_show_satz_element, linearParent,false);
             ((TextView) scrollViewChildElem.findViewById(R.id.text_satz)).setText("Satz " + (i + 1) + ":");
             wert = singelton.getRightPlan().getUebung(position).getGewicht(i);
-            Log.d(TAG, "Gewicht: " + wert);
             ((TextView) scrollViewChildElem.findViewById(R.id.text_gewicht)).setText(wert + " kg");
             wert = singelton.getRightPlan().getUebung(position).getWH(i);
-            Log.d(TAG, "Gewicht: " + wert);
             ((TextView) scrollViewChildElem.findViewById(R.id.text_wiederholung)).setText("" + wert);
 
             linearParent.addView(scrollViewChildElem);
         }
-        Log.e(TAG, "initLayout() finished");
     }
 
     private void getIncomingIntent() {
         if (getIntent().hasExtra("uebung_name")) {
-            Log.d(TAG, "getIncomingIntent: found intent uebung_name");
-
             mTitle = getIntent().getStringExtra("uebung_name");
         }
         if (getIntent().hasExtra("group")) {
             group = getIntent().getIntExtra("group", -1);
         }
         if (getIntent().hasExtra("position")) {
-
             position = getIntent().getIntExtra("position", 0);
-
-            Log.d(TAG, "getIncomingIntent: found intent position: " + position);
         }
     }
 

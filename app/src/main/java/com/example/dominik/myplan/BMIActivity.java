@@ -66,7 +66,6 @@ public class BMIActivity extends AppCompatActivity {
                     gewicht_wert = Double.parseDouble(input);
                 else
                     gewicht_wert = 0;
-                Log.d("gewicht Wert: ", "" + d.format(gewicht_wert));
                 updateViews();
             }
 

@@ -42,7 +42,6 @@ public class AddPlanActivity extends AppCompatActivity {
                     if (tag.getCheckedRadioButtonId() != -1) {
                         RadioButton button = (RadioButton) findViewById(tag.getCheckedRadioButtonId());
                         plan.setTag(button.getText().toString());
-                        Log.e("JSON", Integer.toString(tag.getCheckedRadioButtonId()));
                     }
                     singleton.addPlan(plan);
                     singleton.setIndex(singleton.getPlans().size() - 1);
