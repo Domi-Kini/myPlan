@@ -20,7 +20,7 @@ public class BMIActivity extends AppCompatActivity {
     private static final int MANN = 0;
     private static final int FRAU = 1;
 
-    private int geschlaecht = MANN;
+    private int geschlecht = MANN;
     private double gewicht_wert;
     private double groesse_wert;
 
@@ -40,14 +40,14 @@ public class BMIActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
 
-        Switch mSwitch = (Switch) findViewById(R.id.switch_geschlaecht);
+        Switch mSwitch = (Switch) findViewById(R.id.switch_geschlecht);
         mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    geschlaecht = FRAU;
+                    geschlecht = FRAU;
                 } else {
-                    geschlaecht = MANN;
+                    geschlecht = MANN;
                 }
                 updateViews();
             }
@@ -107,7 +107,7 @@ public class BMIActivity extends AppCompatActivity {
     private void updateViews() {
         if (gewicht_wert == 0 && groesse_wert != 0) {
             double ideal;
-            if (geschlaecht == MANN)
+            if (geschlecht == MANN)
                 ideal = 22.6 * Math.pow(groesse_wert / 100, 2);
             else
                 ideal = 18.5 * Math.pow(groesse_wert / 100, 2);
@@ -123,7 +123,7 @@ public class BMIActivity extends AppCompatActivity {
         } else if (gewicht_wert != 0 && groesse_wert != 0) {
             double bmi_num = gewicht_wert / (Math.pow(groesse_wert / 100, 2));
             double ideal;
-            if (geschlaecht == MANN)
+            if (geschlecht == MANN)
                 ideal = 22.6 * Math.pow(groesse_wert / 100, 2);
             else
                 ideal = 18.5 * Math.pow(groesse_wert / 100, 2);
