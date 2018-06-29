@@ -1,12 +1,17 @@
 package com.example.dominik.myplan;
 
 import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -25,9 +30,11 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private RecyclerView mRecyclerView;
     private MySingleton singleton = MySingleton.getInstance();
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +50,35 @@ public class MainActivity extends AppCompatActivity {
             singleton.setPlans(plaene);
         }
 
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_main);
+        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
+
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+
+        NavigationView navView = (NavigationView) findViewById(R.id.navview_main);
+        navView.setNavigationItemSelectedListener(this);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         initLayout();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (mToggle.onOptionsItemSelected(item))
+            return true;
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.nav_bmi) {
+            Intent intent = new Intent(this, BMIActivity.class);
+            startActivity(intent);
+        }
+        return true;
     }
 
     private void initLayout() {

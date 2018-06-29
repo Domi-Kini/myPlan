@@ -165,8 +165,6 @@ public class ConfigureUebungActivity extends AppCompatActivity {
                 isvalid = false;
             else if (!gewichte.get(i).getText().toString().isEmpty() && wiederholungen.get(i).getText().toString().isEmpty())
                 isvalid = false;
-            else if (gewichte.get(i).getText().toString().equals("0") || wiederholungen.get(i).getText().toString().equals("0"))
-                isvalid = false;
             else if (!gewichte.get(i).getText().toString().isEmpty() && !wiederholungen.get(i).getText().toString().isEmpty())
                 isvalid = true;
         }
