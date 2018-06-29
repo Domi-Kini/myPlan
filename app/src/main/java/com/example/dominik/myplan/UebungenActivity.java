@@ -1,6 +1,7 @@
 package com.example.dominik.myplan;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,12 +20,13 @@ public class UebungenActivity extends AppCompatActivity {
 
     private static final String TAG = "UebungenActivity";
 
-    public static final int SAFE = 0;
-    public static final int CANCEL = 1;
+    public static final int SAFE = 1;
+    public static final int CANCEL = 2;
 
     private ArrayList<ItemData> mDataset;
     private String mTitle;
     MySingleton singleton = MySingleton.getInstance();
+    private int group;
 
     RecyclerView mRecyclerView;
     @Override
@@ -80,74 +82,61 @@ public class UebungenActivity extends AppCompatActivity {
     }
 
     private void getIncomingIntent() {
-        if (getIntent().hasExtra("muclegroup_name")) {
+        if (getIntent().hasExtra("musclegroup")) {
             Log.d(TAG, "getIncomingIntent: found intent extras");
+            group = getIntent().getIntExtra("musclegroup", -1);
 
-            mTitle = getIntent().getStringExtra("muclegroup_name");
+            mTitle = getTitle(group);
         }
+    }
+
+    private String getTitle(int pos) {
+        String[] titles = getResources().getStringArray(R.array.muskelgruppen);
+        return titles[pos];
     }
 
     private void setDataset() {
         mDataset = new ArrayList<>();
+        String[] title;
+        TypedArray images;
         switch(mTitle) {
             case "Brust":
-                {
-                    String[] title = getResources().getStringArray(R.array.uebungen_brust);
-                    for (int i = 0; i < title.length; i++) {
-                        mDataset.add(new ItemData(title[i], R.drawable.mucles_chest, ItemData.UEBUNG));
-                    }
-                }
+                title = getResources().getStringArray(R.array.uebungen_brust);
+                images = getResources().obtainTypedArray(R.array.images_brust);
                 break;
-            case "Ruecken":
-                {
-                    String[] title = getResources().getStringArray(R.array.uebungen_rücken);
-                    for (int i = 0; i < title.length; i++) {
-                        mDataset.add(new ItemData(title[i], R.drawable.mucles_back, ItemData.UEBUNG));
-                    }
-                }
+            case "Rücken":
+                title = getResources().getStringArray(R.array.uebungen_rücken);
+                images = getResources().obtainTypedArray(R.array.images_ruecken);
                 break;
             case "Schultern":
-                {
-                    String[] title = getResources().getStringArray(R.array.uebungen_schultern);
-                    for (int i = 0; i < title.length; i++) {
-                        mDataset.add(new ItemData(title[i], R.drawable.mucles_shoulders, ItemData.UEBUNG));
-                    }
-                }
+                title = getResources().getStringArray(R.array.uebungen_schultern);
+                images = getResources().obtainTypedArray(R.array.images_schultern);
                 break;
             case "Bauch":
-            {
-                String[] title = getResources().getStringArray(R.array.uebungen_bauch);
-                for (int i = 0; i < title.length; i++) {
-                    mDataset.add(new ItemData(title[i], R.drawable.mucles_abdominals, ItemData.UEBUNG));
-                }
-            }
+                title = getResources().getStringArray(R.array.uebungen_bauch);
+                images = getResources().obtainTypedArray(R.array.images_bauch);
                 break;
             case "Bizeps":
-            {
-                String[] title = getResources().getStringArray(R.array.uebungen_bizeps);
-                for (int i = 0; i < title.length; i++) {
-                    mDataset.add(new ItemData(title[i], R.drawable.mucles_biceps, ItemData.UEBUNG));
-                }
-            }
+                title = getResources().getStringArray(R.array.uebungen_bizeps);
+                images = getResources().obtainTypedArray(R.array.images_bizeps);
                 break;
             case "Trizeps":
-            {
-                String[] title = getResources().getStringArray(R.array.uebungen_trizeps);
-                for (int i = 0; i < title.length; i++) {
-                    mDataset.add(new ItemData(title[i], R.drawable.mucles_triceps, ItemData.UEBUNG));
-                }
-            }
+                title = getResources().getStringArray(R.array.uebungen_trizeps);
+                images = getResources().obtainTypedArray(R.array.images_trizeps);
                 break;
             case "Beine":
-            {
-                String[] title = getResources().getStringArray(R.array.uebungen_beine);
-                for (int i = 0; i < title.length; i++) {
-                    mDataset.add(new ItemData(title[i], R.drawable.mucles_legs, ItemData.UEBUNG));
-                }
-            }
+                title = getResources().getStringArray(R.array.uebungen_beine);
+                images = getResources().obtainTypedArray(R.array.images_beine);
                 break;
             default:
                 Log.e(TAG, "in setDataset: SOMETHING IS WRONG, can't find right group");
+                title = new String[1];
+                title[0] = "Error";
+                images = getResources().obtainTypedArray(R.array.images_group);
         }
+        for (int i = 0; i < title.length; i++) {
+            mDataset.add(new ItemData(title[i], images.getResourceId(i, -1), ItemData.UEBUNG, group));
+        }
+        images.recycle();
     }
 }

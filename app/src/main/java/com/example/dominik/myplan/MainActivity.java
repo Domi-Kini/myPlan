@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -41,12 +43,18 @@ public class MainActivity extends AppCompatActivity {
             singleton.setPlans(plaene);
         }
 
-        ArrayList<ItemData> mDataset = getDataset();
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_main);
-        MyAdapter adapter = new MyAdapter(this, mDataset);
+        initLayout();
+    }
+
+    private void initLayout() {
+        ScrollView scrollView = (ScrollView) findViewById(R.id.scrollview_main);
+        View scrollViewChildElem = LayoutInflater.from(this).inflate(R.layout.layout_main, scrollView, false);
+
+        mRecyclerView = (RecyclerView) scrollViewChildElem.findViewById(R.id.recyclerview_main);
+        MyAdapter adapter = new MyAdapter(this, getDataset());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        final Button addPlanButton = (Button) findViewById(R.id.button_add_plan);
+        final Button addPlanButton = (Button) scrollViewChildElem.findViewById(R.id.button_add_plan);
         addPlanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,15 +63,42 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        scrollView.addView(scrollViewChildElem);
     }
 
     private ArrayList<ItemData> getDataset() {
         ArrayList<ItemData> list = new ArrayList<>();
         ItemData item;
+        int image;
         if (singleton.getPlans() != null) {
             if (!singleton.getPlans().isEmpty()) {
                 for (int i = 0; i < singleton.getPlans().size(); i++) {
-                    item = new ItemData(singleton.getPlans().get(i).getName(), R.drawable.plan_icon_placeholder, ItemData.PLAN);
+                    switch(singleton.getPlans().get(i).getTag()) {
+                        case "Montag":
+                            image = R.drawable.monday;
+                            break;
+                        case "Dienstag":
+                            image = R.drawable.tuesday;
+                            break;
+                        case "Mittwoch":
+                            image = R.drawable.wednesday;
+                            break;
+                        case "Donnerstag":
+                            image = R.drawable.thursday;
+                            break;
+                        case "Freitag":
+                            image = R.drawable.friday;
+                            break;
+                        case "Samstag":
+                            image = R.drawable.saturday;
+                            break;
+                        case "Sonntag":
+                            image = R.drawable.sunday;
+                            break;
+                        default:
+                            image = R.drawable.no_day;
+                    }
+                    item = new ItemData(singleton.getPlans().get(i).getName(), image, ItemData.PLAN);
                     list.add(item);
                 }
             }

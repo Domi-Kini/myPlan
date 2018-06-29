@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">myPlan</string>
     <string name="add_plan">+ Traingsplan hinzufügen</string>
-    <string name="create_plan">Traingsplan erstellen</string>
+    <string name="create_plan">Übungen hinzufügen</string>
     <string name="nameofplan">Name des Trainingsplans*:</string>
     <string name="choose_day">Wähle einen Tag für das Training aus:</string>
     <string name="monday">Montag</string>

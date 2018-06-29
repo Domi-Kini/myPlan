@@ -16,37 +16,45 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".AddPlanActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.dominik.myplan.MainActivity" />
-
         </activity>
-        <activity android:name=".MuscleGroupActivity"
-            android:parentActivityName=".MainActivity">
+
+        <activity android:name=".MuscleGroupActivity"/>
+
+        <activity android:name=".UebungenActivity"
+            android:parentActivityName=".MuscleGroupActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.dominik.myplan.MainActivity" />
+                android:value="com.example.dominik.myplan.MuscleGroupActivity"/>
+        </activity>
 
-        </activity>
-        <activity
-            android:name=".UebungenActivity"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.dominik.myplan.MainActivity" />
-        </activity>
         <activity android:name=".ConfigureUebungActivity"
             android:parentActivityName=".UebungenActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.dominik.myplan.UebungenActivity" />
+        </activity>
+
+        <activity android:name=".PlanActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dominik.myplan.MainActivity" />
 
         </activity>
-        <activity android:name=".PlanActivity">
 
+        <activity android:name=".ShowUebungActivity"
+            android:parentActivityName=".PlanActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dominik.myplan.PlanActivity"/>
         </activity>
+
     </application>
 
 </manifest>

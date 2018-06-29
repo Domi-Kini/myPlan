@@ -2,90 +2,231 @@
 <resources>
     <string-array name="muskelgruppen">
         <item>Brust</item>
-        <item>Ruecken</item>
+        <item>Rücken</item>
         <item>Beine</item>
         <item>Bizeps</item>
-        <item>Trizpes</item>
+        <item>Trizeps</item>
         <item>Schultern</item>
         <item>Bauch</item>
     </string-array>
+
+    <integer-array name="images_group">
+        <item>@drawable/group_chest</item>
+        <item>@drawable/group_back</item>
+        <item>@drawable/group_legs</item>
+        <item>@drawable/group_biceps</item>
+        <item>@drawable/group_triceps</item>
+        <item>@drawable/group_shoulders</item>
+        <item>@drawable/group_abdominals</item>
+    </integer-array>
+
+    <integer-array name="images_uebungen_brust">
+        <item>@drawable/bankdruecken</item>
+        <item>@drawable/schraegbankdruecken</item>
+        <item>@drawable/bankdruecken_kurzhantel</item>
+        <item>@drawable/butterfly</item>
+        <item>@drawable/butterfly_kabelzug</item>
+        <item>@drawable/butterfly_kabelzug_oben</item>
+        <item>@drawable/butterfly_kabelzug_unten</item>
+        <item>@drawable/butterfly_kurzhanteln</item>
+        <item>@drawable/brustpresse</item>
+        <item>@drawable/liegestuetze</item>
+    </integer-array>
+    <integer-array name="images_uebungen_ruecken">
+        <item>@drawable/klimmzuege</item>
+        <item>@drawable/kreuzheben</item>
+        <item>@drawable/latziehen</item>
+        <item>@drawable/rudern</item>
+        <item>@drawable/kurzhantel_rudern</item>
+        <item>@drawable/rudern_gebueckt</item>
+        <item>@drawable/t_hantel_rudern</item>
+        <item>@drawable/achselzucken</item>
+        <item>@drawable/rueckenstrecken</item>
+    </integer-array>
+    <integer-array name="images_uebungen_beine">
+        <item>@drawable/kniebeugen</item>
+        <item>@drawable/beinpresse</item>
+        <item>@drawable/beinstrecker</item>
+        <item>@drawable/beinbeuger</item>
+        <item>@drawable/ausfallschritt</item>
+        <item>@drawable/bankspringen</item>
+    </integer-array>
+    <integer-array name="images_uebungen_bizeps">
+        <item>@drawable/bizeps_curls_kurzhantel</item>
+        <item>@drawable/langhantelcurls_sz_stange</item>
+        <item>@drawable/hammercurls</item>
+        <item>@drawable/hammercurls_kabelzug</item>
+        <item>@drawable/scottcurls_kurzhantel</item>
+    </integer-array>
+    <integer-array name="images_uebungen_trizeps">
+        <item>@drawable/bankdruecken_eng</item>
+        <item>@drawable/dips</item>
+        <item>@drawable/trizepscurls_kabelzug</item>
+        <item>@drawable/trizepscurls_kurzhanteln</item>
+        <item>@drawable/trizepscurls_geraet</item>
+        <item>@drawable/trizepscurls_sz_stange</item>
+        <item>@drawable/stirndruecken_kabelzug</item>
+    </integer-array>
+    <integer-array name="images_uebungen_schultern">
+        <item>@drawable/schulterdruecken</item>
+        <item>@drawable/schulterdruecken_langhantel</item>
+        <item>@drawable/schulterdruecken_geraet</item>
+        <item>@drawable/seitheben</item>
+        <item>@drawable/seitheben_kabelzug</item>
+        <item>@drawable/seitheben_kabelzug_einarmig</item>
+        <item>@drawable/seitheben_geraet</item>
+        <item>@drawable/rudern_senkrecht</item>
+        <item>@drawable/frontheben</item>
+    </integer-array>
+    <integer-array name="images_uebungen_bauch">
+        <item>@drawable/beinheben</item>
+        <item>@drawable/beinheben_haengend</item>
+        <item>@drawable/seitheben_geraet</item>
+        <item>@drawable/seitneigen_kurzhantel</item>
+        <item>@drawable/situps</item>
+    </integer-array>
+
+    <integer-array name="images_brust">
+        <item>@drawable/uebung_bankdruecken</item>
+        <item>@drawable/uebung_schraegbankdruecken</item>
+        <item>@drawable/uebung_bankdruecken_kurzhantel</item>
+        <item>@drawable/uebung_butterfly</item>
+        <item>@drawable/uebung_butterfly_kabelzug</item>
+        <item>@drawable/uebung_butterfly_kabelzug_oben</item>
+        <item>@drawable/uebung_butterfly_kabelzug_unten</item>
+        <item>@drawable/uebung_butterfly_kurzhantel</item>
+        <item>@drawable/uebung_brustpresse</item>
+        <item>@drawable/uebung_liegestuetzen</item>
+    </integer-array>
 
     <string-array name="uebungen_brust">
         <item>Bankdrücken</item>
         <item>Schrägbankdrücken</item>
         <item>Kurzhanteldrücken</item>
-        <item>Paralleles Stangenbeugen</item>
-        <item>Kabelbrücken Fliegen</item>
-        <item>Hantelfliegen</item>
-        <item>Hantelüberzug</item>
+        <item>Butterfly</item>
+        <item>Butterfly am Kabelzug</item>
+        <item>Butterfly am Kabelzug nach oben</item>
+        <item>Butterfly am Kabelzug nach unten</item>
+        <item>Butterfly mit Kurzhanteln</item>
+        <item>Brustpresse</item>
         <item>Liegestützen</item>
-        <item>Kurzhanteldrücken</item>
-        <item>Schmetterlinge</item>
     </string-array>
+
+    <integer-array name="images_ruecken">
+        <item>@drawable/uebung_klimmzuege</item>
+        <item>@drawable/uebung_kreuzheben</item>
+        <item>@drawable/uebung_latziehen</item>
+        <item>@drawable/uebung_rudern</item>
+        <item>@drawable/uebung_rudern_kurzhantel</item>
+        <item>@drawable/uebung_rudern_gebueckt</item>
+        <item>@drawable/uebung_rudern_thantel</item>
+        <item>@drawable/uebung_achselzucken</item>
+        <item>@drawable/uebung_rueckenstrecken</item>
+    </integer-array>
 
     <string-array name="uebungen_rücken">
         <item>Klimmzüge</item>
         <item>Kreuzheben</item>
         <item>Latziehen</item>
-        <item>Sitzendes Rudern</item>
+        <item>Rudern</item>
         <item>Einarmiges Kurzhantelrudern</item>
-        <item>Kurzhantel-Achselzucken</item>
-        <item>Langhantel-Achselzucken</item>
-        <item>Rückenverlängerungen</item>
         <item>Gebücktes Rudern</item>
-        <item>Gebeugtes Kurzhantelrudern</item>
         <item>Gebeugtes T-Stangen-Rudern</item>
+        <item>Achselzucken</item>
+        <item>Rückenstrecken</item>
     </string-array>
+
+    <integer-array name="images_schultern">
+        <item>@drawable/uebung_schraegbankdruecken</item>
+        <item>@drawable/uebung_schulterdruecken_langhantel</item>
+        <item>@drawable/uebung_schulterdruecken_geraet</item>
+        <item>@drawable/uebung_seitheben</item>
+        <item>@drawable/uebung_seitheben_kabelzug</item>
+        <item>@drawable/uebung_seitheben_kabelzug_einarmig</item>
+        <item>@drawable/uebung_seitheben_geraet</item>
+        <item>@drawable/uebung_rudern_senkrecht</item>
+        <item>@drawable/uebung_frontheben</item>
+    </integer-array>
 
     <string-array name="uebungen_schultern">
-        <item>Rückendrücken</item>
-        <item>Sitzendes Einständerpressen</item>
-        <item>Sitzendes Kurzhanteldrücken</item>
-        <item>Seitheben der unteren Umlenkrolle</item>
-        <item>Senkrechtes Rudern</item>
+        <item>Schulterdrücken Kurzhantel</item>
+        <item>Schulterdrücken Langhantel</item>
+        <item>Schulterdrücken am Gerät</item>
         <item>Seitheben</item>
+        <item>Seitheben am Kabelzug</item>
+        <item>Seitheben am Kabelzug einarmig</item>
+        <item>Seitheben am Gerät</item>
+        <item>Senkrechtes Rudern</item>
         <item>Frontheben</item>
-        <item>Langhantelfrontheben</item>
-        <item>Hinteres Schmetterlingsseitheben</item>
-        <item>Kurzhantel Vogelscheuche</item>
     </string-array>
+
+    <integer-array name="images_bauch">
+        <item>@drawable/uebung_beinheben</item>
+        <item>@drawable/uebung_beinheben_haengend</item>
+        <item>@drawable/uebung_seitneigen_geraet</item>
+        <item>@drawable/uebung_seitneigen_kurzhanteln</item>
+        <item>@drawable/uebung_situps</item>
+    </integer-array>
 
     <string-array name="uebungen_bauch">
-        <item>Hantelbank Sit-ups</item>
-        <item>Freiragendes Beinheben</item>
-        <item>Hantel-Seitneigung</item>
-        <item>Sit-ups</item>
         <item>Beinheben</item>
-        <item>Seitenbrücke</item>
-        <item>Superman</item>
+        <item>Hängendes Beinheben</item>
+        <item>Seitneigen am Gerät</item>
+        <item>Seitneigen mit Kurzhanteln</item>
+        <item>Sit-ups</item>
     </string-array>
+
+    <integer-array name="images_bizeps">
+        <item>@drawable/uebung_bizepscurls_kurzhantel</item>
+        <item>@drawable/uebung_langhantelcurls</item>
+        <item>@drawable/uebung_hammercurls_kurzhantel</item>
+        <item>@drawable/uebung_hammercurls_kabelzug</item>
+        <item>@drawable/uebung_scottcurls_kurzhantel</item>
+    </integer-array>
 
     <string-array name="uebungen_bizeps">
-        <item>Kurzhantel-Curls</item>
-        <item>Langhantel-Curls</item>
-        <item>Priesterübung</item>
-        <item>Hammer-Curls</item>
-        <item>Kabelbizepsübung</item>
-        <item>Untere Kabelrollbrücke</item>
+        <item>Kurzhantelcurls</item>
+        <item>Langhantelcurls</item>
+        <item>Hammercurls</item>
+        <item>Hammercurls am Kabelzug</item>
+        <item>Scottcurls mit Kurzhanteln</item>
     </string-array>
 
+    <integer-array name="images_trizeps">
+        <item>@drawable/uebung_bankdruecken_eng</item>
+        <item>@drawable/uebung_dips</item>
+        <item>@drawable/uebung_trizepscurls_kabelzug</item>
+        <item>@drawable/uebung_trizepscurls_kurzhantel</item>
+        <item>@drawable/uebung_trizepscurls_geraet</item>
+        <item>@drawable/uebung_trizepscurls_szstange</item>
+        <item>@drawable/uebung_stirndruecken_kabelzug</item>
+    </integer-array>
+
     <string-array name="uebungen_trizeps">
-        <item>Bankdrücken mit engem Griff</item>
-        <item>Hinunterdrücken</item>
-        <item>Trizepsverlängerung</item>
-        <item>Trizepsrückschläge</item>
-        <item>Einarmige Trizepshantelverlängerung</item>
-        <item>Trizepsvertiefungen</item>
-        <item>Diamant Liegestützen</item>
+        <item>Enges Bankdrücken</item>
+        <item>Dips</item>
+        <item>Trizepscurls am Kabelzug</item>
+        <item>Trizepscurls Kurzhanteln</item>
+        <item>Trizepscurls am Gerät</item>
+        <item>Tizepscurls S-Z-Stange</item>
+        <item>Stirndrücken am Kabelzug</item>
     </string-array>
+
+    <integer-array name="images_beine">
+        <item>@drawable/uebung_kniebeugen</item>
+        <item>@drawable/uebung_beinpresse</item>
+        <item>@drawable/uebung_beinstrecker</item>
+        <item>@drawable/uebung_beinbeuger</item>
+        <item>@drawable/uebung_ausfallschritt</item>
+        <item>@drawable/uebung_bankspringen</item>
+    </integer-array>
 
     <string-array name="uebungen_beine">
         <item>Kniebeugen</item>
         <item>Beinpresse</item>
-        <item>Beinstrecken</item>
-        <item>Beinbeugen</item>
+        <item>Beinstrecker</item>
+        <item>Beinbeuger</item>
         <item>Hantelausfallschritte</item>
-        <item>Kabelrückziehen</item>
         <item>Bankspringen</item>
     </string-array>
 </resources>

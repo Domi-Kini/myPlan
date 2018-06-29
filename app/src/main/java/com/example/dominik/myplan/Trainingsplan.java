@@ -24,7 +24,7 @@ public class Trainingsplan {
         uebungen.add(e);
     }
 
-    public void deleteUebunge(int ind) {
+    public void deleteUebung(int ind) {
         uebungen.remove(ind);
     }
 

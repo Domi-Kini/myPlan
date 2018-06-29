@@ -1,5 +1,6 @@
 package com.example.dominik.myplan;
 
+import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
@@ -29,6 +30,9 @@ public class ConfigureUebungActivity extends AppCompatActivity {
     private LinearLayout linearParent;
     private MySingleton singelton = MySingleton.getInstance();
     private String mTitle;
+    private int group;
+    private int position;
+    private int iconUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +46,8 @@ public class ConfigureUebungActivity extends AppCompatActivity {
         textView.setText(mTitle);
 
         ImageView Image = (ImageView) findViewById(R.id.image_uebung);
-        Image.setImageResource(R.drawable.uebung_schraegbankdruecken);
+        final int image = getRightImage();
+        Image.setImageResource(image);
 
         initLayout();
 
@@ -73,7 +78,7 @@ public class ConfigureUebungActivity extends AppCompatActivity {
                     ArrayList<Satz> saetze = getSaetze();
                     Satz[] satzarr = new Satz[saetze.size()];
                     satzarr = saetze.toArray(satzarr);
-                    Uebung uebung = new Uebung(mTitle, satzarr);
+                    Uebung uebung = new Uebung(mTitle, satzarr, iconUrl, image);
                     singelton.getRightPlan().setUebung(uebung);
 
                     makeToast(v, "Übung gespeichert", false);
@@ -81,6 +86,38 @@ public class ConfigureUebungActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private int getRightImage() {
+        TypedArray images;
+        switch (group) {
+            case 0:
+                images = getResources().obtainTypedArray(R.array.images_uebungen_brust);
+                break;
+            case 1:
+                images = getResources().obtainTypedArray(R.array.images_uebungen_ruecken);
+                break;
+            case 2:
+                images = getResources().obtainTypedArray(R.array.images_uebungen_beine);
+                break;
+            case 3:
+                images = getResources().obtainTypedArray(R.array.images_uebungen_bizeps);
+                break;
+            case 4:
+                images = getResources().obtainTypedArray(R.array.images_uebungen_trizeps);
+                break;
+            case 5:
+                images = getResources().obtainTypedArray(R.array.images_uebungen_schultern);
+                break;
+            case 6:
+                images = getResources().obtainTypedArray(R.array.images_uebungen_bauch);
+                break;
+            default:
+                images = getResources().obtainTypedArray(R.array.images_group);
+        }
+        int image = images.getResourceId(position, -1);
+        images.recycle();
+        return image;
     }
 
     private void initLayout() {
@@ -100,6 +137,15 @@ public class ConfigureUebungActivity extends AppCompatActivity {
             Log.d(TAG, "getIncomingIntent: found intent uebung_name");
 
             mTitle = getIntent().getStringExtra("uebung_name");
+        }
+        if (getIntent().hasExtra("group")) {
+            group = getIntent().getIntExtra("group", -1);
+        }
+        if (getIntent().hasExtra("position")) {
+            position = getIntent().getIntExtra("position", -1);
+        }
+        if (getIntent().hasExtra("imageUrl")) {
+            iconUrl = getIntent().getIntExtra("imageUrl", -1);
         }
     }
 
